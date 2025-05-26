@@ -404,7 +404,12 @@ public class Planechasefx {
                     JButton removeImageButton5 = new JButton("Remove Image 5");
                     JButton removeImageButton6 = new JButton("Remove Image 6");
                     
-                    JButton returnToAvailableButton = new JButton("Return to Available");
+                    JButton returnToAvailableButton1 = new JButton("Return Image 1 to Available");
+                    JButton returnToAvailableButton2 = new JButton("Return Image 2 to Available");
+                    JButton returnToAvailableButton3 = new JButton("Return Image 3 to Available");
+                    JButton returnToAvailableButton4 = new JButton("Return Image 4 to Available");
+                    JButton returnToAvailableButton5 = new JButton("Return Image 5 to Available");
+                    JButton returnToAvailableButton6 = new JButton("Return Image 6 to Available");
                     
                     rButtonPanel.add(removeImageButton1);
                     rButtonPanel.add(removeImageButton2);
@@ -412,8 +417,61 @@ public class Planechasefx {
                     rButtonPanel.add(removeImageButton4);
                     rButtonPanel.add(removeImageButton5);
                     rButtonPanel.add(removeImageButton6);
-                    //TODO: add a button to return the card to the available list
-                    rButtonPanel.add(returnToAvailableButton);
+                    // add functionality to buttons to remove the image
+
+                    removeImageButton1.addActionListener(_ -> {
+                        if (!drawnImageLabels.isEmpty()) {
+                            JLabel label = drawnImageLabels.get(0);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+                    removeImageButton2.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 1) {
+                            JLabel label = drawnImageLabels.get(1);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+                    removeImageButton3.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 2) {
+                            JLabel label = drawnImageLabels.get(2);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+                    removeImageButton4.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 3) {
+                            JLabel label = drawnImageLabels.get(3);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+                    removeImageButton5.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 4) {
+                            JLabel label = drawnImageLabels.get(4);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+                    removeImageButton6.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 5) {
+                            JLabel label = drawnImageLabels.get(5);
+                            label.setIcon(null);
+                            label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        }
+                    });
+
+                    // Add return to available buttons
+                    rButtonPanel.add(returnToAvailableButton1);
+                    rButtonPanel.add(returnToAvailableButton2);
+                    rButtonPanel.add(returnToAvailableButton3);
+                    rButtonPanel.add(returnToAvailableButton4);
+                    rButtonPanel.add(returnToAvailableButton5);
+                    rButtonPanel.add(returnToAvailableButton6);
+                    //TODO: add functionality to buttons to return the card to the available list
+                    
+                     
                     // Add the game panel to the game frame
                     gameFrame.add(gamePanel, BorderLayout.CENTER);
                 });
