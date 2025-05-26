@@ -324,6 +324,7 @@ public class Planechasefx {
                         emptyLabel.setHorizontalAlignment(SwingConstants.CENTER);
                         emptyLabel.setVerticalAlignment(SwingConstants.CENTER);
                         emptyLabel.setPreferredSize(new Dimension(400, 300));
+                        emptyLabel.setText("");
                         drawnImagesPanel.add(emptyLabel);
                         drawnImageLabels.add(emptyLabel);
                     }
@@ -375,6 +376,7 @@ public class Planechasefx {
                             for (JLabel label : drawnImageLabels) {
                                 if (label.getIcon() == null) {
                                     label.setIcon(planeImageIcon);
+                                    label.setText(drawnPlane); // Set the text to the plane name
                                     imageAdded = true;
                                     break;
                                 }
@@ -423,6 +425,7 @@ public class Planechasefx {
                         if (!drawnImageLabels.isEmpty()) {
                             JLabel label = drawnImageLabels.get(0);
                             label.setIcon(null);
+                            label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -430,6 +433,7 @@ public class Planechasefx {
                         if (drawnImageLabels.size() > 1) {
                             JLabel label = drawnImageLabels.get(1);
                             label.setIcon(null);
+                             label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -437,6 +441,7 @@ public class Planechasefx {
                         if (drawnImageLabels.size() > 2) {
                             JLabel label = drawnImageLabels.get(2);
                             label.setIcon(null);
+                             label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -444,6 +449,7 @@ public class Planechasefx {
                         if (drawnImageLabels.size() > 3) {
                             JLabel label = drawnImageLabels.get(3);
                             label.setIcon(null);
+                             label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -451,6 +457,7 @@ public class Planechasefx {
                         if (drawnImageLabels.size() > 4) {
                             JLabel label = drawnImageLabels.get(4);
                             label.setIcon(null);
+                             label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -458,6 +465,7 @@ public class Planechasefx {
                         if (drawnImageLabels.size() > 5) {
                             JLabel label = drawnImageLabels.get(5);
                             label.setIcon(null);
+                             label.setText(""); // Clear the text
                             label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
                         }
                     });
@@ -469,9 +477,81 @@ public class Planechasefx {
                     rButtonPanel.add(returnToAvailableButton4);
                     rButtonPanel.add(returnToAvailableButton5);
                     rButtonPanel.add(returnToAvailableButton6);
-                    //TODO: add functionality to buttons to return the card to the available list
+
+                    //add functionality to buttons to return the card to the available list
+                    returnToAvailableButton1.addActionListener(_ -> {
+                        if (!drawnImageLabels.isEmpty()) {
+                            JLabel label = drawnImageLabels.get(0);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
+                    returnToAvailableButton2.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 1) {
+                            JLabel label = drawnImageLabels.get(1);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
+                    returnToAvailableButton3.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 2) {
+                            JLabel label = drawnImageLabels.get(2);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
+                    returnToAvailableButton4.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 3) {
+                            JLabel label = drawnImageLabels.get(3);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
+                    returnToAvailableButton5.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 4) {
+                            JLabel label = drawnImageLabels.get(4);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
+                    returnToAvailableButton6.addActionListener(_ -> {
+                        if (drawnImageLabels.size() > 5) {
+                            JLabel label = drawnImageLabels.get(5);
+                            if (label.getIcon() != null) {
+                                planesListModel.addElement(label.getText()); // Add the plane back to the available list
+                                drawnPlanesListModel.removeElement(label.getText()); // Remove from drawn list
+                                label.setIcon(null);
+                                label.setText(""); // Clear the text
+                                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                            }
+                        }
+                    });
                     
-                     
                     // Add the game panel to the game frame
                     gameFrame.add(gamePanel, BorderLayout.CENTER);
                 });
