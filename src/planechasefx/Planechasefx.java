@@ -302,7 +302,7 @@ public class Planechasefx {
                     JScrollPane drawnPlanesScrollPane = new JScrollPane(drawnPlanesList);
                     drawnPlanesScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
                     drawnPlanesScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                    gamePanel.add(drawnPlanesScrollPane, BorderLayout.EAST); // Add the drawn planes list to the left side
+                    gamePanel.add(drawnPlanesScrollPane, BorderLayout.EAST); // Add the drawn planes list to the right side
 
                     // Create a draw button
                     JButton drawButton = new JButton("Draw Plane");
