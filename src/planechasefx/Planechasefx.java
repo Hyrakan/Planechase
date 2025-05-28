@@ -372,18 +372,12 @@ public class Planechasefx {
                             
 
                             // Add the drawn plane image to an empty pane
-                            boolean imageAdded = false;
                             for (JLabel label : drawnImageLabels) {
                                 if (label.getIcon() == null) {
                                     label.setIcon(planeImageIcon);
                                     label.setText(drawnPlane); // Set the text to the plane name
-                                    imageAdded = true;
                                     break;
                                 }
-                            }
-
-                            if (!imageAdded) {
-                                JOptionPane.showMessageDialog(gameFrame, "Maximum of 3 images displayed at a time!", "Limit Reached", JOptionPane.WARNING_MESSAGE);
                             }
 
                             
